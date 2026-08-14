@@ -3,7 +3,7 @@
 <meta name="theme-color" content="#141619">
 <style>
 :root{--app-bar:64px}
-body{padding-bottom:96px!important}
+
 .appbar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:10px;
  background:rgba(250,247,239,.92);backdrop-filter:saturate(180%) blur(12px);
  -webkit-backdrop-filter:saturate(180%) blur(12px);
@@ -17,6 +17,7 @@ body{padding-bottom:96px!important}
 [contenteditable="true"]:hover{background:rgba(138,123,74,.06)}
 [contenteditable="true"]:focus{background:rgba(138,123,74,.14);box-shadow:0 0 0 2px rgba(138,123,74,.35)}
 td[contenteditable="true"],th{white-space:normal!important;overflow-wrap:anywhere;vertical-align:top}
+td.n,th.n,td.cb,th.cb{white-space:nowrap!important;overflow-wrap:normal!important;word-break:keep-all!important}
 table{table-layout:fixed;width:100%}
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .box{cursor:pointer;position:relative;transition:background .12s,border-color .12s}
@@ -24,16 +25,14 @@ table{table-layout:fixed;width:100%}
 .box.on::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;
  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
 .writein,.blank,.lines{border-radius:6px}
-.fillact{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:10px;align-items:center;
- background:rgba(250,247,239,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
- border-top:1px solid var(--rule);margin:0;
- padding:12px 20px calc(12px + env(safe-area-inset-bottom))}
+.fillact{display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+ border-top:1px solid var(--rule);margin:34px 0 0;padding:20px 0 0}
 .fillact button{font-family:var(--sans);font-size:14px;font-weight:600;padding:12px 20px;border-radius:8px;
  border:1px solid #1a1a1a;background:#1a1a1a;color:#faf7ef;cursor:pointer;-webkit-appearance:none;appearance:none}
 .fillact button+button{background:transparent;color:#1a1a1a}
 .fillact button:active{transform:translateY(1px)}
 @media (max-width:760px){
- body{padding:16px 14px 100px!important}
+ body{padding:16px 14px 28px!important}
  .appbar{margin:-16px -14px 18px;padding:11px 14px}
  h1{font-size:29px!important;line-height:1.12} h2{font-size:21px!important} h3{font-size:16px!important}
  p,li{font-size:15px!important;line-height:1.55}
@@ -43,7 +42,7 @@ table{table-layout:fixed;width:100%}
  [contenteditable="true"]{font-size:16px!important}
  td,th{padding:10px!important}
  .box{width:22px;height:22px} .box.on::after{left:6px;top:2px;width:6px;height:12px}
- .fillact{padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+
  .fillact button{flex:1;padding:14px 10px;font-size:15px}
  .wseal{width:58px}
 }
@@ -231,7 +230,7 @@ what I need from this ownership team, and where I can and cannot play a role.</p
 
 <h3 style="margin-top:34px">7 · Rocks — due 31 December 2026</h3>
 <p class="sub" style="margin:0 0 10px">The company priorities we commit to by 31 December. Three to eight.</p>
-<div class="tw"><table><thead><tr><th style="width:6%">#</th><th style="width:58%">Rock</th><th>Who</th><th>Done looks like</th></tr></thead><tbody>
+<div class="tw"><table><thead><tr><th class="n" style="width:44px">#</th><th style="width:58%">Rock</th><th>Who</th><th>Done looks like</th></tr></thead><tbody>
 <tr><td contenteditable="true" class="n">1</td><td style="height:42px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td contenteditable="true" class="n">2</td><td style="height:42px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td contenteditable="true" class="n">3</td><td style="height:42px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td contenteditable="true" class="n">4</td><td style="height:42px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td contenteditable="true" class="n">5</td><td style="height:42px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td contenteditable="true" class="n">6</td><td style="height:42px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td contenteditable="true" class="n">7</td><td style="height:42px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td contenteditable="true" class="n">8</td><td style="height:42px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr></tbody></table></div>
 <h4 style="font-family:var(--sans);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin:22px 0 6px">The Boulder</h4>
 <p>Of all the rocks in the area you own, <b>one is the boulder</b> — the one that moves everything behind it.
@@ -241,7 +240,7 @@ If you only shifted a single thing by 31 December, this is the one you would pic
 <tr><td contenteditable="true"><b>Josh</b></td><td style="height:38px" contenteditable="true"></td></tr><tr><td contenteditable="true"><b>Ronni</b></td><td style="height:38px" contenteditable="true"></td></tr><tr><td contenteditable="true"><b>Meagan</b></td><td style="height:38px" contenteditable="true"></td></tr><tr><td contenteditable="true"><b>Adam</b></td><td style="height:38px" contenteditable="true"></td></tr><tr><td contenteditable="true"><b>Randall</b></td><td style="height:38px" contenteditable="true"></td></tr><tr><td contenteditable="true"><b>Keegan</b></td><td style="height:38px" contenteditable="true"></td></tr><tr><td contenteditable="true"><b>Caleb</b></td><td style="height:38px" contenteditable="true"></td></tr><tr><td contenteditable="true"><b>Jason</b></td><td style="height:38px" contenteditable="true"></td></tr></tbody></table></div>
 <h3 style="margin-top:34px">8 · Issues list</h3>
 <p class="sub" style="margin:0 0 8px">Each area presents, and the topic goes on the list. Anything a presentation leaves unresolved gets added as its own line. Nothing is solved while the list is being built. <b>When it is complete, everyone ticks the five that matter most to them</b> — the ones with the most ticks are what we work first.</p>
-<div class="tw"><table><thead><tr><th style="width:5%">#</th><th style="width:64%">Issue</th><th>Owner</th><th class="cb">Top&nbsp;five</th></tr></thead><tbody>
+<div class="tw"><table><thead><tr><th class="n" style="width:44px">#</th><th style="width:64%">Issue</th><th>Owner</th><th class="cb">Top&nbsp;five</th></tr></thead><tbody>
 <tr><td contenteditable="true" class="n">1</td><td contenteditable="true">12-month wholesale plan</td><td contenteditable="true"><b>Adam</b></td><td class="cb"><span class="box"></span></td></tr>
 <tr><td contenteditable="true" class="n">2</td><td contenteditable="true">12-month marketing plan</td><td contenteditable="true"><b>Ronni</b></td><td class="cb"><span class="box"></span></td></tr>
 <tr><td contenteditable="true" class="n">3</td><td contenteditable="true">12-month culinary and bakery program</td><td contenteditable="true"><b>Caleb</b></td><td class="cb"><span class="box"></span></td></tr>
