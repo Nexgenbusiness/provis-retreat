@@ -135,7 +135,7 @@ what I need from this ownership team, and where I can and cannot play a role.</p
 
 <h3>1 · Core values</h3>
 <p class="sub" style="margin:0 0 4px">Three to five.</p>
-<div class="blank lg"></div>
+<div class="blank lg" contenteditable="true"></div>
 
 <h3 style="margin-top:28px">2 · Core focus</h3>
 <div class="grid2">
@@ -145,7 +145,7 @@ what I need from this ownership team, and where I can and cannot play a role.</p
 
 <h3 style="margin-top:28px">3 · Ten-year target</h3>
 <p class="sub" style="margin:0 0 4px">One number, one date.</p>
-<div class="blank sm"></div>
+<div class="blank sm" contenteditable="true"></div>
 
 <h3 style="margin-top:28px">4 · Marketing strategy</h3>
 <div class="tw"><table>
@@ -157,21 +157,21 @@ what I need from this ownership team, and where I can and cannot play a role.</p
 <thead><tr><th>Future date</th><th class="n">Revenue</th><th>Measurables</th></tr></thead>
 <tbody><tr><td contenteditable="true" style="height:52px">31 August 2029</td><td class="n" contenteditable="true"></td><td class="n" contenteditable="true"></td><td contenteditable="true"></td></tr></tbody></table></div>
 <p class="sub" style="margin:12px 0 4px">What does it look like?</p>
-<div class="blank lg"></div>
+<div class="blank lg" contenteditable="true"></div>
 
 <h3 style="margin-top:34px">6 · One-year plan</h3>
 <div class="tw"><table>
 <thead><tr><th>Future date</th><th class="n">Revenue</th><th>Measurables</th></tr></thead>
 <tbody><tr><td contenteditable="true" style="height:52px">31 August 2027</td><td contenteditable="true" class="n"><span style="color:var(--mute)">mid $790,539</span></td><td contenteditable="true"><span style="color:var(--mute)">500 lb/wk wholesale · 175 café/day</span></td></tr></tbody></table></div>
 <p class="sub" style="margin:12px 0 4px">Goals for the year — three to seven. <b>We come back to this after the issues list is worked</b>, so the goals reflect what we found during the day.</p>
-<div class="tw"><table><thead><tr><th style="width:58%">Goal</th><th class="n">Where we are today</th><th>Owner</th></tr></thead><tbody>
-<tr><td style="height:40px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
-<tr><td style="height:40px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
-<tr><td style="height:40px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
-<tr><td style="height:40px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
-<tr><td style="height:40px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
-<tr><td style="height:40px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
-<tr><td style="height:40px" contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+<div class="tw"><table><thead><tr><th style="width:74%">Goal</th><th>Owner</th></tr></thead><tbody>
+<tr><td style="height:40px" contenteditable="true"></td><td contenteditable="true"></td></tr>
+<tr><td style="height:40px" contenteditable="true"></td><td contenteditable="true"></td></tr>
+<tr><td style="height:40px" contenteditable="true"></td><td contenteditable="true"></td></tr>
+<tr><td style="height:40px" contenteditable="true"></td><td contenteditable="true"></td></tr>
+<tr><td style="height:40px" contenteditable="true"></td><td contenteditable="true"></td></tr>
+<tr><td style="height:40px" contenteditable="true"></td><td contenteditable="true"></td></tr>
+<tr><td style="height:40px" contenteditable="true"></td><td contenteditable="true"></td></tr>
 </tbody></table></div>
 <p class="sub" style="margin-top:10px">For reference, not as a starting list: five objectives were set in July — 1,000 lb a week roasted, 10,000 Instagram followers, 250 café orders a day, food brought in-house, a second location signed. Today those stand at 32 lb a week external, 5,000 followers, a café that opens 19 September, partners sourced, and a plan that defers a second site to year three. Keep, change or drop any of them.</p>
 
@@ -332,7 +332,27 @@ Watch who has not been named yet.</p>
 <div class="fillact"><button id="pr" type="button">Download as PDF</button><span id="msg"></span></div>
 <footer>Provis Coffee Roasters · Founding Partners Retreat · 14 August 2026 · 4346 Belgium Blvd, Riverside &amp; 2914 Buchanan St, North Kansas City<br>
 90-day goals due 31 December 2026.</footer></div><script>
-
+(async () => {
+  const pr = document.getElementById('pr'), dl = document.getElementById('dl'), msg = document.getElementById('msg');
+  pr.addEventListener('click', () => window.print());
+  let downloads = null;
+  try { downloads = await window.claude.use('downloads'); } catch (e) { downloads = null; }
+  if (!downloads) return;
+  dl.hidden = false;
+  dl.addEventListener('click', async () => {
+    msg.textContent = '';
+    const name = (document.querySelector('[data-owner]')?.textContent || 'workbook').trim();
+    try {
+      await downloads.save({
+        filename: 'Provis Retreat Workbook - filled.html',
+        data: '<!doctype html>' + document.documentElement.outerHTML
+      });
+      msg.textContent = 'Saved.';
+    } catch (err) {
+      msg.textContent = 'Download declined or unavailable — use Print / Save as PDF instead.';
+    }
+  });
+})();
 </script><script>
 document.addEventListener('click', e => {
   const b = e.target.closest('.box');
