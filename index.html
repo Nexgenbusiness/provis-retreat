@@ -17,8 +17,10 @@
 [contenteditable="true"]:hover{background:rgba(138,123,74,.06)}
 [contenteditable="true"]:focus{background:rgba(138,123,74,.14);box-shadow:0 0 0 2px rgba(138,123,74,.35)}
 td[contenteditable="true"],th{white-space:normal!important;overflow-wrap:anywhere;vertical-align:top}
-td.n,th.n,td.cb,th.cb{white-space:nowrap!important;overflow-wrap:normal!important;word-break:keep-all!important}
-table{table-layout:fixed;width:100%}
+td.n,th.n,td.cb,th.cb{white-space:nowrap!important;overflow-wrap:normal!important;word-break:keep-all!important;width:1%}
+table{table-layout:auto;width:100%}
+td,th{overflow-wrap:break-word}
+td:first-child,th:first-child{white-space:normal}
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .box{cursor:pointer;position:relative;transition:background .12s,border-color .12s}
 .box.on{background:#1a1a1a;border-color:#1a1a1a}
