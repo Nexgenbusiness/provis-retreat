@@ -6,8 +6,7 @@
 :root{--bone:#F8FAEF;--ink:#1a1a1a;--mute:#5d5d5d;--rule:#d8d5c8;--brass:#8A7B4A;--warn:#7A2A22;--good:#2F4F33;
  --disp:Georgia,'Iowan Old Style',serif;--sans:ui-sans-serif,-apple-system,'Segoe UI',sans-serif}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--disp);
- -webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--disp);-webkit-font-smoothing:antialiased}
 section{min-height:100vh;padding:7vh 6vw;display:flex;flex-direction:column;justify-content:center;
  border-bottom:1px solid var(--rule);position:relative}
 section.dark{background:#14151D;color:#EFF0E4;--ink:#EFF0E4;--mute:#9EA0AE;--rule:#33354A;--brass:#CFBE8C}
@@ -15,11 +14,11 @@ section.dark td,section.dark th{color:#EFF0E4}
 section.dark th{color:#9EA0AE}
 .eyebrow{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
  color:var(--brass);margin-bottom:14px}
-h1{font-size:clamp(34px,5.2vw,64px);line-height:1.05;margin:0 0 18px;font-weight:700;letter-spacing:-.02em}
-h2{font-size:clamp(24px,3.4vw,42px);line-height:1.12;margin:0 0 20px;font-weight:700;letter-spacing:-.015em}
+h1{font-size:clamp(32px,5vw,60px);line-height:1.05;margin:0 0 18px;font-weight:700;letter-spacing:-.02em}
+h2{font-size:clamp(23px,3.3vw,40px);line-height:1.12;margin:0 0 18px;font-weight:700;letter-spacing:-.015em}
 h3{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
- color:var(--mute);margin:26px 0 8px}
-p{font-size:clamp(14px,1.15vw,17px);line-height:1.55;max-width:62ch;margin:0 0 12px}
+ color:var(--mute);margin:22px 0 8px}
+p{font-size:clamp(14px,1.12vw,17px);line-height:1.55;max-width:64ch;margin:0 0 12px}
 .sub{color:var(--mute)}
 b{color:var(--brass)}
 section.dark b{color:#CFBE8C}
@@ -28,202 +27,219 @@ table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:clam
 th,td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
 th{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:700}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-tr.hi td{background:rgba(138,123,74,.10);font-weight:700}
+tr.hi td{background:rgba(138,123,74,.12);font-weight:700}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule);
- border:1px solid var(--rule);margin:18px 0}
-.stats div{background:var(--bone);padding:18px 16px}
+ border:1px solid var(--rule);margin:16px 0}
+.stats div{background:var(--bone);padding:16px 14px}
 section.dark .stats div{background:#1A1C26}
-.stats .n{display:block;font-family:var(--disp);font-weight:700;font-size:clamp(22px,2.8vw,38px);line-height:1}
+.stats .n{display:block;font-family:var(--disp);font-weight:700;font-size:clamp(21px,2.6vw,34px);line-height:1}
 .stats .l{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
  color:var(--mute);margin-top:6px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:2.5vw;align-items:start}
 .count{position:absolute;bottom:3vh;right:6vw;font-family:var(--sans);font-size:11px;color:var(--mute)}
-.flag{border-left:3px solid var(--warn);padding-left:14px;margin:16px 0}
-.ok{border-left:3px solid var(--good);padding-left:14px;margin:16px 0}
-@media (max-width:820px){.two{grid-template-columns:1fr}section{padding:6vh 6vw}.tw table{min-width:640px}}
+.flag{border-left:3px solid var(--warn);padding-left:14px;margin:14px 0}
+.ok{border-left:3px solid var(--good);padding-left:14px;margin:14px 0}
+@media (max-width:820px){.two{grid-template-columns:1fr}section{padding:6vh 6vw}.tw table{min-width:600px}}
 @media print{section{min-height:0;page-break-after:always;padding:12mm}@page{size:A4 landscape;margin:10mm}
  .count{display:none}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 
 <section class="dark">
-<div class="eyebrow">Peer benchmark · August 2026</div>
-<h1>What it takes to<br>reach $10M</h1>
-<p class="sub">Ten US specialty roasters, researched independently. Revenue, channel mix, pounds roasted,
-enterprise value — and what the evidence says about our ten-year plan.</p>
-<div class="count">1 / 9</div>
+<div class="eyebrow">Peer benchmark · v2 · 14 August 2026</div>
+<h1>What it actually takes<br>to reach $10M</h1>
+<p class="sub">Ten US specialty roasters, researched from SEC filings, published price lists and company
+disclosures. What the evidence says — and where our first read was wrong.</p>
+<div class="count">1 / 11</div>
 </section>
 
 <section>
-<div class="eyebrow">The peer set</div>
-<h2>Ten roasters, ranked by revenue</h2>
+<div class="eyebrow">Correction</div>
+<h2>Our first model priced the whole industry<br>at Provis prices</h2>
 <div class="tw"><table>
-<thead><tr><th>Company</th><th class="n">Revenue</th><th class="n">Cafés</th><th class="n">Rev/café</th>
-<th class="n">Café</th><th class="n">Wholesale</th><th class="n">DTC</th><th class="n">Instagram</th><th>Owner</th></tr></thead>
+<thead><tr><th>Channel</th><th class="n">v1 assumed</th><th class="n">v2 actual</th><th class="n">Error</th></tr></thead>
 <tbody>
-<tr class="hi"><td>Onyx Coffee Lab</td><td class="n">$18.0M</td><td class="n">10</td><td class="n">$720K</td><td class="n">40%</td><td class="n">30%</td><td class="n">30%</td><td class="n">285K</td><td>Founders</td></tr>
-<tr class="hi"><td>Proud Mary (US)</td><td class="n">$11.5M</td><td class="n">2</td><td class="n">$3,738K</td><td class="n">65%</td><td class="n">18%</td><td class="n">13%</td><td class="n">48.9K</td><td>Founders + Reg CF</td></tr>
-<tr><td>Elixr Coffee</td><td class="n">$9.0M</td><td class="n">8</td><td class="n">$866K</td><td class="n">77%</td><td class="n">18%</td><td class="n">5%</td><td class="n">20.6K</td><td>Founders</td></tr>
-<tr class="hi"><td>Black &amp; White</td><td class="n">$8.5M</td><td class="n">3</td><td class="n">$708K</td><td class="n">25%</td><td class="n">50%</td><td class="n">25%</td><td class="n">50K</td><td>PE — FairWave</td></tr>
-<tr><td>Madcap Coffee</td><td class="n">$8.0M</td><td class="n">4</td><td class="n">$740K</td><td class="n">37%</td><td class="n">36%</td><td class="n">27%</td><td class="n">76.2K</td><td>Founders</td></tr>
-<tr><td>Methodical Coffee</td><td class="n">$7.0M</td><td class="n">4</td><td class="n">$700K</td><td class="n">40%</td><td class="n">50%</td><td class="n">10%</td><td class="n">50K</td><td>Founders</td></tr>
-<tr><td>Passenger Coffee</td><td class="n">$6.5M</td><td class="n">2</td><td class="n">$520K</td><td class="n">16%</td><td class="n">44%</td><td class="n">40%</td><td class="n">26.5K</td><td>Founders</td></tr>
-<tr><td>Metric Coffee</td><td class="n">$5.5M</td><td class="n">2</td><td class="n">$1,513K</td><td class="n">55%</td><td class="n">34%</td><td class="n">12%</td><td class="n">35.1K</td><td>Founders</td></tr>
-<tr><td>Vigilante Coffee</td><td class="n">$3.4M</td><td class="n">4</td><td class="n">$612K</td><td class="n">72%</td><td class="n">18%</td><td class="n">10%</td><td class="n">24.4K</td><td>Founders</td></tr>
-<tr><td>Sey Coffee</td><td class="n">$3.1M</td><td class="n">1</td><td class="n">$992K</td><td class="n">32%</td><td class="n">31%</td><td class="n">37%</td><td class="n">64.7K</td><td>Founders</td></tr>
+<tr><td>Café</td><td class="n">$167/lb</td><td class="n">$190/lb</td><td class="n">12% low</td></tr>
+<tr><td>Retail / DTC</td><td class="n">$33/lb</td><td class="n">$42/lb</td><td class="n">22–27% low</td></tr>
+<tr class="hi"><td>Wholesale</td><td class="n">$12/lb</td><td class="n">$17/lb</td><td class="n">33–58% low</td></tr>
 </tbody></table></div>
-<p class="sub">Revenue is estimated except Proud Mary, whose global figures come from SEC filings.
-Rev/café is café-channel revenue divided by café count — not total revenue.</p>
-<div class="count">2 / 9</div>
+<p><b>All three were low, in the same direction.</b> Each constant had been anchored on our own price list —
+so the model was asking what ten companies would earn if they charged Provis prices.</p>
+<p class="sub">v2 constants derived from 389 wholesale variants and 534 retail bag variants, priced from the
+peers' own shops.</p>
+<div class="count">2 / 11</div>
 </section>
 
 <section>
-<div class="eyebrow">Volume and value</div>
-<h2>Pounds roasted, and what these companies are worth</h2>
+<div class="eyebrow">The cross-check</div>
+<h2>Black &amp; White published their own volume</h2>
+<div class="stats">
+<div><span class="n">520,000</span><span class="l">lb roasted per year</span></div>
+<div><span class="n">10,000</span><span class="l">lb per week</span></div>
+<div><span class="n">14,000</span><span class="l">sq ft plant</span></div>
+<div><span class="n">3</span><span class="l">Loring roasters</span></div>
+</div>
+<p>At v1's constants that volume implies <b>$9.46M</b> — already above v1's own $8.5M estimate.
+At corrected constants it implies <b>$11.9M, 40% higher.</b></p>
+<p>v1 wasn't a judgement call that landed low. It was <b>arithmetically inconsistent with a number
+Black &amp; White published themselves.</b> Passenger moves the same way: $6.5M → $7.9M.</p>
+<div class="count">3 / 11</div>
+</section>
+
+<section>
+<div class="eyebrow">The only audited peer</div>
+<h2>Proud Mary — three years, filed with the SEC</h2>
 <div class="tw"><table>
-<thead><tr><th>Company</th><th class="n">lb / year</th><th class="n">lb / week</th><th class="n">Est. EV</th><th class="n">EV / revenue</th></tr></thead>
+<thead><tr><th>USD, global consolidated</th><th class="n">FY2023</th><th class="n">FY2024</th><th class="n">FY2025</th></tr></thead>
 <tbody>
-<tr><td>Onyx Coffee Lab</td><td class="n">656,750</td><td class="n">12,630</td><td class="n">$17.5M</td><td class="n">0.97×</td></tr>
-<tr><td>Black &amp; White</td><td class="n">431,285</td><td class="n">8,294</td><td class="n">$8.1M</td><td class="n">0.95×</td></tr>
-<tr><td>Methodical Coffee</td><td class="n">329,645</td><td class="n">6,339</td><td class="n">$5.8M</td><td class="n">0.83×</td></tr>
-<tr><td>Passenger Coffee</td><td class="n">323,349</td><td class="n">6,218</td><td class="n">$6.9M</td><td class="n">1.06×</td></tr>
-<tr><td>Madcap Coffee</td><td class="n">323,179</td><td class="n">6,215</td><td class="n">$7.6M</td><td class="n">0.95×</td></tr>
-<tr><td>Proud Mary (US)</td><td class="n">256,029</td><td class="n">4,924</td><td class="n">$9.0M</td><td class="n">0.78×</td></tr>
-<tr><td>Metric Coffee</td><td class="n">193,947</td><td class="n">3,730</td><td class="n">$4.6M</td><td class="n">0.84×</td></tr>
-<tr><td>Elixr Coffee</td><td class="n">190,133</td><td class="n">3,656</td><td class="n">$6.8M</td><td class="n">0.76×</td></tr>
-<tr><td>Sey Coffee</td><td class="n">120,781</td><td class="n">2,323</td><td class="n">$3.2M</td><td class="n">1.03×</td></tr>
-<tr><td>Vigilante Coffee</td><td class="n">75,962</td><td class="n">1,461</td><td class="n">$2.7M</td><td class="n">0.79×</td></tr>
+<tr><td>Revenue</td><td class="n">$13.77M</td><td class="n">$14.03M</td><td class="n">$16.42M</td></tr>
+<tr><td>Gross margin</td><td class="n">34.3%</td><td class="n">30.8%</td><td class="n">32.1%</td></tr>
+<tr class="hi"><td>Net income</td><td class="n">−$486K</td><td class="n">−$412K</td><td class="n">+$646K</td></tr>
 </tbody></table></div>
-<p><b>Enterprise value lands in a tight 0.76×–1.06× of revenue band.</b> Café-heavy businesses sit at the
-bottom, DTC-weighted ones at the top. A $10M Provis is worth roughly <b>$8–11M</b> — not a multiple of it.</p>
-<div class="count">3 / 9</div>
+<p><b>Two loss years, then a profit that is 74% government credits</b> — $374K of Employee Retention
+Credits plus $103K interest. Strip those and a $16.4M company is roughly breakeven.</p>
+<p>Four cafés globally, two in the US, both with full kitchens. <b>88.4% founder-held.</b> Raised $1.19M
+at a $60M cap from 237 investors.</p>
+<p class="sub">Café wages of $3.49M sit inside their COGS, which is why gross margin reads 32%. Back them
+out and it is ~53%.</p>
+<div class="count">4 / 11</div>
 </section>
 
 <section class="dark">
-<div class="eyebrow">The central question</div>
-<h2>Has anyone reached $10M<br>with three cafés or fewer?</h2>
-<p><b>Yes. Two of them. Neither did it with subscriptions.</b></p>
+<div class="eyebrow">Kansas City</div>
+<h2>FairWave is in our market,<br>and its debt is public</h2>
+<div class="stats">
+<div><span class="n">$70–110M</span><span class="l">Estimated revenue</span></div>
+<div><span class="n">14</span><span class="l">Brands</span></div>
+<div><span class="n">50+</span><span class="l">Cafés</span></div>
+<div><span class="n">1.51×</span><span class="l">Equity mark since 2024</span></div>
+</div>
+<p>Two SEC-reporting lenders hold FairWave's first-lien debt and mark it quarterly. <b>$17.3M funded</b>
+at SOFR + 6.75% cash + 1.50% PIK, originated 1 April 2024, maturing 2029. Implied total facility
+<b>$35–70M</b>, back-solving to <b>$8–17M of EBITDA.</b></p>
+<p><b>The equity is marked up 51% in 27 months</b> — $163.02 against a $107.68 basis, the same mark from
+two independent vehicles. Their lenders believe the roll-up is working.</p>
+<p class="sub">Owned by Great Range Capital, Mission Woods KS. Portfolio includes Messenger Coffee and
+The Roasterie. Black &amp; White was acquired 2 April 2025, funded off a delayed-draw tranche dated
+31 March. Both our largest local competitor and our most plausible acquirer.</p>
+<div class="count">5 / 11</div>
+</section>
+
+<section>
+<div class="eyebrow">Method</div>
+<h2>No specialty roaster discloses revenue.<br>Not one.</h2>
+<p>Across roughly forty primary sources — Daily Coffee News, Sprudge, Fresh Cup, Upstate Business Journal,
+Crain's, BevNET, PRNewswire and every reachable founder interview — <b>there is not one dollar figure</b>
+for Black &amp; White, Madcap or Methodical.</p>
+<p>The only disclosed financial ratio in the entire peer set is Methodical's <b>"wholesale is approximately
+50% of revenue."</b></p>
+<div class="flag">
+<p><b>Every revenue number in circulation for these companies is modelled</b> — including ours. The data
+brokers are worse than useless: Buzzfile put Black &amp; White at $2.0M against a published volume implying
+$10–12M, and Compworth put FairWave at $16.9M against its own headcount band of 501–1,000.</p>
+</div>
+<p>The real benchmark currency is <b>roasting volume and facility square footage</b>, which companies do
+publish.</p>
+<div class="count">6 / 11</div>
+</section>
+
+<section>
+<div class="eyebrow">Café economics — the real number</div>
+<h2>Franchise filings disclose what<br>a café actually turns over</h2>
+<p class="sub">Franchisors must file average unit volume with state regulators. Pulled from the Minnesota
+registry — the franchisors' own documents, not estimates.</p>
+<div class="tw"><table>
+<thead><tr><th>Format</th><th class="n">AUV</th><th class="n">Units</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr><td>Independent / regional, secondary market</td><td class="n">$430–600K</td><td class="n">—</td><td>Biggby, PJ's, indie sale listings</td></tr>
+<tr><td>Independent neighbourhood café, good market</td><td class="n">$550–850K</td><td class="n">—</td><td>Multiplemarket listings</td></tr>
+<tr class="hi"><td><b>Gregorys — inline, no drive-thru</b></td><td class="n">$976K mean<br>$1.02M median</td><td class="n">32</td><td>The cleanest comp available</td></tr>
+<tr class="hi"><td><b>Peet's — non-California</b></td><td class="n">$1.11M</td><td class="n">30</td><td>Fair read for a KC-type market</td></tr>
+<tr><td>Peet's — all inline</td><td class="n">$1.48M</td><td class="n">191</td><td>California-weighted</td></tr>
+<tr class="hi"><td><b>Panera — full food program</b></td><td class="n">$2.54M</td><td class="n">1,073</td><td>19.3% store EBITDA</td></tr>
+<tr><td>Drive-thru, exceptional brand</td><td class="n">$2.1–2.7M</td><td class="n">—</td><td>Dutch Bros, 7 Brew</td></tr>
+</tbody></table></div>
+<p><b>Gregorys is the best single comparable in the exercise</b> — the only brand cleanly isolating inline
+café with no drive-thru. Median above mean means a healthy distribution, not a few outliers carrying it.</p>
+<p class="sub">The drive-thru premium is measured four independent ways — Biggby +28%, PJ's +25%,
+Einstein +32%, Peet's +23%. <b>Call it +25–30%.</b></p>
+<div class="count">7 / 11</div>
+</section>
+
+<section class="dark">
+<div class="eyebrow">The pattern</div>
+<h2>Operators who have run this experiment<br>are moving away from it</h2>
 <div class="two">
 <div>
-<h3>Proud Mary US · $11.5M on 2 cafés</h3>
-<p>The cafés are <b>restaurants</b>. Full kitchens, seven days, Australian all-day brunch.
-Revenue per café is <b>$3.7M — five times the peer median.</b></p>
-<p class="sub">The caveats are severe: two consecutive loss years at $13–14M of revenue, a 32% gross margin,
-and a profit that is 58% one-off government credits. They also took outside money and hired
-Stumptown's former EVP to run the US business.</p>
+<h3>Peet's — Capital Markets Day 2025</h3>
+<p>"FROM: Company-owned stores with regional footprint → <b>TO: National footprint with franchise
+partners.</b>"</p>
 </div>
 <div>
-<h3>Black &amp; White · $8.5M on 3 cafés</h3>
-<p>The company is a <b>factory</b>. 520,000 lb a year through a 14,000 sq ft plant with three Loring
-roasters. Half wholesale, a quarter DTC on two to three new releases every week.</p>
-<p class="sub">Cafés are 25% of revenue. The founders were two US Barista Champions — not a
-replicable input. Sold to private equity at eight years old.</p>
+<h3>Proud Mary — SEC use of proceeds</h3>
+<p>Expanding into "<b>smaller to-go models</b>… repeatable, scaleable designs, build, equipment, service
+and technology."</p>
 </div>
 </div>
-<p style="margin-top:20px"><b>The pattern:</b> to reach $10M on three cafés or fewer you either make the
-cafés restaurants, or make the company a wholesale factory. There is no third example.</p>
-<div class="count">4 / 9</div>
+<p style="margin-top:20px">Both reached scale on company-owned cafés with food programs. Both are now
+deliberately reducing that exposure.</p>
+<p><b>Two of three roaster peers also shrank.</b> Black &amp; White closed Rolesville — its only location
+with a real kitchen. Madcap sold Leland. Only Methodical is still opening, at a stated
+<b>"at least one cafe a year."</b></p>
+<div class="count">8 / 11</div>
 </section>
 
 <section>
-<div class="eyebrow">The finding that matters most</div>
-<h2>No one has done it on subscriptions</h2>
-<div class="stats">
-<div><span class="n">0</span><span class="l">Peers at $10M via DTC</span></div>
-<div><span class="n">40%</span><span class="l">Highest DTC share — Passenger</span></div>
-<div><span class="n">$6.5M</span><span class="l">Passenger's revenue</span></div>
-<div><span class="n">57%</span><span class="l">Our plan's DTC share</span></div>
-</div>
-<p><b>DTC share has no relationship to company size.</b> Sey is 37% DTC at $3.1M. Elixr is 5% DTC at $9.0M.
-The two largest companies sit at 30% and 13%.</p>
-<p>The closest anyone comes to a subscription-led business is <b>Passenger at 40% DTC and $6.5M</b> — and
-that DTC rests on a frozen-green sourcing moat letting them sell single origins year-round, not on a
-subscriber count.</p>
-<p class="sub">Our plan routes <b>57% of revenue</b> through a 10,000-subscriber book. That is a higher share
-than any peer, at a larger size than the highest-share peer achieves.</p>
-<div class="count">5 / 9</div>
-</section>
-
-<section>
-<div class="eyebrow">Our plan</div>
-<h2>What the evidence supports</h2>
+<div class="eyebrow">Food</div>
+<h2>The one peer who bought their bakery</h2>
+<p>Methodical acquired <b>Bake Room outright in March 2024</b> rather than outsourcing it. The reported
+result: <b>"pastry sales exploded in 2024."</b></p>
+<p>They are the only peer in the set with a genuine kitchen program, the largest headcount band of the
+three, the largest roastery at <b>39,500 sq ft</b>, and the only one still expanding.</p>
 <div class="ok">
-<p><b>3–5 cafés is exactly right.</b> Peer median is 3.5, and café count is the second-strongest predictor
-of revenue in the set.</p>
+<p>Every other peer outsources pastry — Madcap to Give Thanks Bakery and Bev's Bagels, Black &amp; White to
+Union Special, Elixr to local bakeries across all eight of its cafés.</p>
 </div>
-<div class="ok">
-<p><b>3,000 lb a week of wholesale is realistic.</b> Methodical does ~290,000 lb on 200 accounts; Black &amp;
-White ~354,000 lb. We would need roughly <b>100–150 accounts</b> — a decade of steady selling, not a miracle.</p>
-</div>
-<div class="ok">
-<p><b>Bootstrapped is normal here.</b> Nine of ten peers took no institutional capital. Onyx explicitly
-disclaims investors.</p>
-</div>
-<div class="ok">
-<p><b>The infrastructure is unremarkable.</b> At $10M: one 35kg roaster, ~12,000 sq ft, ~$420K of green
-inventory. <b>Capacity will not be the constraint. Demand will.</b></p>
-</div>
-<div class="count">6 / 9</div>
-</section>
-
-<section>
-<div class="eyebrow">Our plan</div>
-<h2>What the evidence does not support</h2>
-<div class="flag">
-<p><b>1 · The 10,000-subscriber target carries 57% of revenue</b> and requires a 63–96× increase in monthly
-subscriber acquisition, sustained for a decade. Should be cut to <b>2,000–4,000</b> and re-based.</p>
-</div>
-<div class="flag">
-<p><b>2 · "22% annual growth from year 3" conceals ~391% a year in years one and two.</b> The café is the
-step change. Say so plainly.</p>
-</div>
-<div class="flag">
-<p><b>3 · $12.25/lb wholesale is the bottom of the peer band.</b> It makes 43% of the pounds carry 17% of
-the revenue.</p>
-</div>
-<div class="flag">
-<p><b>4 · The plan assumes three cafés' worth of brand reach on 5,137 followers</b> — in a category where
-audience is the strongest single predictor of revenue.</p>
-</div>
-<div class="flag">
-<p><b>5 · The plan assumes margin improves with scale.</b> The only audited peer says it does not.</p>
-</div>
-<div class="count">7 / 9</div>
-</section>
-
-<section>
-<div class="eyebrow">Audience</div>
-<h2>Followers predict revenue better<br>than anything else</h2>
-<div class="tw"><table>
-<thead><tr><th>Company</th><th class="n">Instagram</th><th class="n">Revenue</th></tr></thead>
-<tbody>
-<tr><td>Onyx Coffee Lab</td><td class="n">285,000</td><td class="n">$18.0M</td></tr>
-<tr><td>Madcap Coffee</td><td class="n">76,200</td><td class="n">$8.0M</td></tr>
-<tr><td>Sey Coffee</td><td class="n">64,700</td><td class="n">$3.1M</td></tr>
-<tr><td>Black &amp; White</td><td class="n">50,000</td><td class="n">$8.5M</td></tr>
-<tr><td>Methodical Coffee</td><td class="n">50,000</td><td class="n">$7.0M</td></tr>
-<tr><td>Proud Mary (US)</td><td class="n">48,900</td><td class="n">$11.5M</td></tr>
-<tr><td>Metric Coffee</td><td class="n">35,100</td><td class="n">$5.5M</td></tr>
-<tr><td>Passenger Coffee</td><td class="n">26,500</td><td class="n">$6.5M</td></tr>
-<tr><td>Vigilante Coffee</td><td class="n">24,400</td><td class="n">$3.4M</td></tr>
-<tr><td>Elixr Coffee</td><td class="n">20,600</td><td class="n">$9.0M</td></tr>
-<tr class="hi"><td>Provis today</td><td class="n">5,137</td><td class="n">$29K since April</td></tr>
-</tbody></table></div>
-<p>Every peer at $5M or above has <b>at least 20,000 followers.</b> Our 10,000-follower objective is not a
-marketing goal — on this evidence it is a <b>revenue prerequisite.</b></p>
-<div class="count">8 / 9</div>
+<p class="sub">Elixr runs eight cafés with <b>zero kitchens</b> and a 12kg Diedrich — one-sixth of Onyx's
+roasting capacity. A café company that happens to roast.</p>
+<div class="count">9 / 11</div>
 </section>
 
 <section class="dark">
-<div class="eyebrow">The verdict</div>
-<h2>Achievable, but top-decile —<br>and not by this route</h2>
-<p><b>Two of ten peers reached roughly $10M within a decade.</b> Onyx at year ten, Black &amp; White at year
-eight before selling. It has been done.</p>
-<p>But the <b>median peer sits at $7–8M after twelve to fourteen years</b>, and both fast movers had
-non-replicable assets — multiple national champions, record auction wins, a full-time creator on staff.</p>
-<p style="margin-top:24px"><b>The café count, the wholesale poundage and the infrastructure plan are all
-well-calibrated.</b> The problem is that the plan routes 57% of its revenue through a subscription book no
-comparable company has ever built.</p>
-<p><b>Re-base it onto the two routes peers have actually used: cafés that sell food after 11am, and
-wholesale priced above $12.25.</b></p>
-<div class="count">9 / 9</div>
+<div class="eyebrow">What this changes</div>
+<h2>Our café assumption was right<br>for year one, low for maturity</h2>
+<div class="stats">
+<div><span class="n">$650K</span><span class="l">What we assumed</span></div>
+<div><span class="n">$430–600K</span><span class="l">New brand, secondary market</span></div>
+<div><span class="n">$976K</span><span class="l">Strong brand, inline</span></div>
+<div><span class="n">$2.54M</span><span class="l">Full food program</span></div>
+</div>
+<p><b>North Kansas City is a secondary market and we are an unknown brand.</b> $430–600K is the honest
+year-one range, and our $650K sat slightly above it.</p>
+<p><b>But maturity is a different number.</b> A known brand running an inline café does <b>$976K–$1.11M.</b>
+Add a real food program and the ceiling moves again — Panera runs $2.54M at 19.3% store EBITDA.</p>
+<p style="margin-top:18px"><b>Five mature cafés at $1M is $5M, not $3.25M.</b> That is half of the ten-year
+target from cafés alone, and it materially reduces what subscriptions and wholesale have to carry.</p>
+<div class="count">10 / 11</div>
+</section>
+<section class="dark">
+<div class="eyebrow">What it means for us</div>
+<h2>The plan is better calibrated<br>than the first read suggested</h2>
+<div class="ok">
+<p><b>3–5 cafés is right.</b> Peer median is 3.5, and two peers are shrinking rather than building.</p>
+</div>
+<div class="ok">
+<p><b>Wholesale at 3,000 lb/week is realistic</b> — roughly 100–150 accounts, a decade of steady selling.</p>
+</div>
+<div class="ok">
+<p><b>Bootstrapped is normal.</b> Eight of ten peers took no institutional capital.</p>
+</div>
+<div class="flag">
+<p><b>Our wholesale is underpriced.</b> $12.25 Founding tier against a peer band of <b>$16–19</b>. That sits
+under 43% of our future poundage and costs nothing to fix on the next contract.</p>
+</div>
+<div class="flag">
+<p><b>The subscription thesis still has no precedent.</b> No peer reached $10M on a DTC book. That finding
+survived every correction.</p>
+</div>
+<div class="count">11 / 11</div>
 </section>
