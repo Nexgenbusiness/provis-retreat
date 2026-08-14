@@ -5,10 +5,10 @@
 <style>
 :root{--app-bar:64px}
 
-.appbar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:10px;
+.appbar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:10px;width:100%;
  background:var(--bone);backdrop-filter:saturate(180%) blur(12px);
  -webkit-backdrop-filter:saturate(180%) blur(12px);
- border-bottom:1px solid var(--rule);margin:-24px -24px 22px;padding:12px 20px}
+ border-bottom:1px solid var(--rule);margin:0 0 24px;padding:12px 0}
 
 .appbar,.appbar .t{color:var(--ink)}
 .appbar .t{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
@@ -29,7 +29,7 @@ td:first-child,th:first-child{white-space:normal}
 .box.on{background:var(--ink);border-color:var(--ink)}
 .box.on::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;
  border:solid var(--bone);border-width:0 2px 2px 0;transform:rotate(45deg)}
-.writein,.blank,.lines{border-radius:6px}
+.writein,.blank,.lines{border-radius:6px;line-height:28px!important;font-size:15px;padding:0 8px!important;background-attachment:local;background-position:0 0}.five li{height:auto!important;min-height:30px;line-height:29px}
 .fillact{display:flex;gap:10px;align-items:center;flex-wrap:wrap;
  border-top:1px solid var(--rule);margin:34px 0 0;padding:20px 0 0}
 .fillact button{font-family:var(--sans);font-size:14px;font-weight:600;padding:12px 20px;border-radius:8px;
@@ -38,7 +38,7 @@ td:first-child,th:first-child{white-space:normal}
 .fillact button:active{transform:translateY(1px)}
 @media (max-width:760px){
  body{padding:16px 14px 28px!important}
- .appbar{margin:-16px -14px 18px;padding:11px 14px}
+ .appbar{margin:0 0 18px;padding:11px 0}
  h1{font-size:29px!important;line-height:1.12} h2{font-size:21px!important} h3{font-size:16px!important}
  p,li{font-size:15px!important;line-height:1.55}
  .tw{border:1px solid var(--rule);border-radius:8px}
