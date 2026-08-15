@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Provis Scope Review</title>
+<meta name="description" content="Provis Coffee — line-by-line construction and FF&amp;E scope review for the 14 Aug 2026 retreat.">
+
+<style>
+  :root {
+    --paper:#EFF1EE; --surface:#F7F8F6; --surface-2:#E6E9E4;
+    --ink:#14181B; --ink-2:#525A60; --ink-3:#7B8388;
+    --rule:#D4D8D3; --rule-2:#BEC4BD;
+    --accent:#26506E; --accent-soft:#E0E8EF; --brass:#87682A;
+    --keep:#2E5A4B; --keep-bg:#E4EDE8;
+    --cut:#8B3A32; --cut-bg:#F3E4E2;
+    --pos:#2E5A4B; --neg:#8B3A32;
+    --serif:"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:#111416; --surface:#181C1F; --surface-2:#212629;
+      --ink:#E6E9E5; --ink-2:#9EA6AA; --ink-3:#747C81;
+      --rule:#282E32; --rule-2:#3A4247;
+      --accent:#7FADD1; --accent-soft:#1A2731; --brass:#C6A45E;
+      --keep:#6FB39A; --keep-bg:#172621;
+      --cut:#D08277; --cut-bg:#2A1B19;
+      --pos:#6FB39A; --neg:#D08277;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:#111416; --surface:#181C1F; --surface-2:#212629;
+    --ink:#E6E9E5; --ink-2:#9EA6AA; --ink-3:#747C81;
+    --rule:#282E32; --rule-2:#3A4247;
+    --accent:#7FADD1; --accent-soft:#1A2731; --brass:#C6A45E;
+    --keep:#6FB39A; --keep-bg:#172621;
+    --cut:#D08277; --cut-bg:#2A1B19;
+    --pos:#6FB39A; --neg:#D08277;
+  }
+
+  * { box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--serif); font-size:16px; line-height:1.55; margin:0; padding:0; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1080px; margin:0 auto; padding:52px 24px 110px; }
+
+  .mast { border-bottom:2px solid var(--ink); padding-bottom:20px; margin-bottom:30px; }
+  .kicker { font-family:var(--mono); font-size:10.5px; letter-spacing:.17em; text-transform:uppercase; color:var(--ink-3); margin:0 0 12px; }
+  h1 { font-weight:600; font-size:clamp(28px,4vw,40px); line-height:1.1; letter-spacing:-.018em; margin:0 0 12px; text-wrap:balance; }
+  .dek { font-size:18px; color:var(--ink-2); margin:0; max-width:64ch; text-wrap:pretty; }
+  .stamp { font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; color:var(--ink-3); margin-top:18px; display:flex; flex-wrap:wrap; gap:5px 20px; }
+
+  .howto { background:var(--surface); border:1px solid var(--rule); border-left:3px solid var(--accent); padding:18px 22px; margin:0 0 18px; }
+  .howto h2 { margin:0 0 9px; font-size:16.5px; font-weight:600; }
+  .howto p { margin:0 0 8px; color:var(--ink-2); font-size:15.5px; max-width:72ch; }
+  .howto p:last-child { margin-bottom:0; }
+  .howto strong { color:var(--ink); }
+
+  .legend { display:flex; flex-wrap:wrap; gap:9px 22px; margin:0 0 34px; padding:12px 0 0; font-family:var(--mono); font-size:11px; color:var(--ink-2); }
+  .legend span { display:flex; align-items:center; gap:7px; }
+
+  .rollup { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1px; background:var(--rule-2); border:1px solid var(--rule-2); margin:0 0 44px; }
+  .rollup > div { background:var(--surface); padding:18px 20px; display:flex; flex-direction:column; gap:4px; }
+  .rollup .lbl { font-family:var(--mono); font-size:10px; letter-spacing:.11em; text-transform:uppercase; color:var(--ink-3); }
+  .rollup .big { font-family:var(--mono); font-size:24px; font-variant-numeric:tabular-nums; letter-spacing:-.02em; }
+  .rollup .sub { font-size:13px; color:var(--ink-2); line-height:1.4; }
+  .rollup .g .big { color:var(--pos); }
+
+  section { margin:0 0 46px; }
+  .eyebrow { font-family:var(--mono); font-size:10.5px; letter-spacing:.17em; text-transform:uppercase; color:var(--accent); margin:0 0 9px; display:flex; align-items:center; gap:10px; }
+  .eyebrow::after { content:""; flex:1; height:1px; background:var(--rule); }
+  h2.sec { font-size:24px; font-weight:600; letter-spacing:-.015em; margin:0 0 6px; text-wrap:balance; }
+  .lede { color:var(--ink-2); margin:0 0 4px; max-width:72ch; font-size:15.5px; }
+  h3 { font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); font-weight:400; margin:26px 0 0; }
+  p { margin:0 0 13px; text-wrap:pretty; }
+  ol { margin:0; padding-left:20px; } li { margin-bottom:8px; }
+
+  .scroll { overflow-x:auto; margin:12px 0 6px; border-top:1px solid var(--ink); border-bottom:1px solid var(--rule-2); }
+  table { border-collapse:collapse; width:100%; min-width:760px; font-size:14.5px; }
+  thead th { font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); font-weight:400; text-align:left; padding:10px 12px 9px; border-bottom:1px solid var(--rule-2); white-space:nowrap; }
+  tbody td { padding:8px 12px; border-bottom:1px solid var(--rule); vertical-align:top; }
+  tbody tr:last-child td { border-bottom:none; }
+  .num { font-family:var(--mono); font-size:13px; font-variant-numeric:tabular-nums; text-align:right; white-space:nowrap; }
+  th.num { text-align:right; }
+  .ref { font-family:var(--mono); font-size:11px; color:var(--ink-3); white-space:nowrap; text-align:right; }
+  th.ref { text-align:right; }
+  .why { color:var(--ink-2); font-size:13.5px; line-height:1.45; }
+  .grp td { font-family:var(--mono); font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); background:var(--surface-2); padding-top:9px; padding-bottom:8px; }
+  .subtotal td { font-weight:600; background:var(--surface); border-top:1px solid var(--rule-2); }
+  .grand td { font-weight:600; background:var(--accent-soft); border-top:2px solid var(--accent); font-size:15.5px; }
+  .grand td.num { font-size:16px; }
+  .neg { color:var(--neg); } .pos { color:var(--pos); } .muted { color:var(--ink-3); }
+  tr.cutrow td:first-child { box-shadow:inset 3px 0 0 var(--cut); }
+  .box { display:inline-block; width:12px; height:12px; border:1.5px solid var(--ink-3); border-radius:2px; vertical-align:-1px; }
+  td.tick { width:34px; padding-left:14px; }
+
+  .d { font-family:var(--mono); font-size:10px; letter-spacing:.07em; text-transform:uppercase; padding:2px 7px; border-radius:2px; white-space:nowrap; display:inline-block; }
+  .d-cut { color:var(--cut); background:var(--cut-bg); font-weight:600; }
+  .d-keep { color:var(--keep); background:var(--keep-bg); }
+
+  .note { border-left:2px solid var(--rule-2); padding:2px 0 2px 16px; margin:16px 0; color:var(--ink-2); font-size:15px; }
+  .note p:last-child { margin-bottom:0; }
+  .fix { border:1px solid var(--rule-2); border-left:3px solid var(--brass); background:var(--surface); padding:18px 22px; margin:22px 0; }
+  .fix .eyebrow { color:var(--brass); }
+  .fix p:last-child { margin-bottom:0; }
+
+  footer { margin-top:56px; padding-top:20px; border-top:1px solid var(--rule); font-family:var(--mono); font-size:10.5px; color:var(--ink-3); line-height:1.8; }
+  a { color:var(--accent); }
+  a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+</style>
+
+<style>
+  .topbar{display:flex;justify-content:flex-end;align-items:center;gap:12px;margin:0 0 10px;font-family:var(--mono)}
+  .topbar a.back{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);text-decoration:none;border:1px solid var(--rule-2);border-radius:999px;padding:6px 13px;transition:border-color .15s,color .15s}
+  .topbar a.back:hover{border-color:var(--accent);color:var(--accent)}
+  .tt{background:none;border:1px solid var(--rule-2);color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:14px;line-height:1;cursor:pointer;-webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .tt:hover{border-color:var(--accent)}
+  @media print{.topbar{display:none}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+<div class="topbar"><a class="back" href="../">&#8592; Workbook</a><button class="tt" id="tt" type="button" aria-label="Switch light or dark">&#9789;</button></div>
+
+<header class="mast">
+  <p class="kicker">Provis Coffee Roasters LLC · Workbook · Retreat 14 Aug 2026</p>
+  <h1>Scope review: every line, every decision</h1>
+  <p class="dek">The full construction and FF&amp;E scope as it stands today, line by line, each one marked approved or declined with what declining saves. Work through it together before anything is committed.</p>
+  <div class="stamp">
+    <span>Source: Pricing w/ Change Orders (5)</span>
+    <span>TO BE ORDERED · 2nd FL Lighting</span>
+    <span>Cash available $117,000</span>
+  </div>
+</header>
+
+<div class="howto">
+  <h2>How to use this</h2>
+  <p>Every line of current scope is here. <strong>Approved</strong> means it stays in and we spend the money. <strong>Declined</strong> means it comes out and the savings column is what we get back. Twelve lines are proposed as declines; everything else is proposed to stay.</p>
+  <p>Tick the box where the room agrees. Mark it where we don't. Nothing here has been sent to Nova or ordered, so every line is still live.</p>
+  <p>Credits and deducts already agreed with Nova are baked into the amounts shown — this is current scope, not the original bid, so the numbers reconcile straight to the sheet.</p>
+</div>
+
+<div class="legend">
+  <span><span class="d d-keep">Approved</span> stays in scope</span>
+  <span><span class="d d-cut">Declined</span> proposed cut — savings shown</span>
+  <span><span class="box"></span> tick if the room agrees</span>
+</div>
+
+<div class="rollup">
+  <div><span class="lbl">Current scope</span><span class="big">$419,070</span><span class="sub">Construction $393,971 + FF&amp;E $25,099</span></div>
+  <div><span class="lbl">Proposed declines</span><span class="big">$22,415</span><span class="sub">12 lines · 5.3% of scope</span></div>
+  <div><span class="lbl">Scope after cuts</span><span class="big">$396,655</span><span class="sub">Construction $378,931 + FF&amp;E $17,724</span></div>
+  <div class="g"><span class="lbl">Cash at opening</span><span class="big">$69,345</span><span class="sub">Up from $46,930 if we approve everything</span></div>
+</div>
+
+<section>
+  <p class="eyebrow">Part 1</p>
+  <h2 class="sec">1st Floor — $270,519</h2>
+  <p class="lede">Two proposed declines out of the whole floor. Everything else is contracted base bid, the Clockwork millwork package, or change orders that are code, equipment or health-department driven.</p>
+
+  <div class="scroll">
+  <table>
+    <thead><tr><th class="tick"></th><th>Item</th><th class="ref">Row</th><th class="num">Amount</th><th>Decision</th><th class="num">Saves</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td></td><td colspan="6">Base bid trades — contracted</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Concrete</td><td class="ref">5</td><td class="num">24,593</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Hardscape allowance</td><td class="ref">6</td><td class="num">27,800</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Fully deducted below — owner furnished</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Cabinetry / millwork</td><td class="ref">7</td><td class="num">23,585</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Credited below, rebuilt by Clockwork</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Doors &amp; frames</td><td class="ref">8</td><td class="num">2,568</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Credited below</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Door hardware</td><td class="ref">9</td><td class="num">603</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Credited below</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Metal framing</td><td class="ref">10</td><td class="num">10,390</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Drywall</td><td class="ref">11</td><td class="num">16,183</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>FRP panels</td><td class="ref">12</td><td class="num">2,548</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Health department, kitchen walls</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Tile</td><td class="ref">13</td><td class="num">3,780</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Fully deducted below — owner furnished</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Flooring</td><td class="ref">14</td><td class="num">16,250</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Epoxy absorbed here</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Base &amp; accessories</td><td class="ref">15</td><td class="num">2,750</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Painting</td><td class="ref">16</td><td class="num">12,786</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Specialties — fireplace</td><td class="ref">17</td><td class="num">14,125</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Insert deducted below, purchased direct</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Bath accessories</td><td class="ref">18</td><td class="num">685</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Fully deducted below</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Countertops</td><td class="ref">19</td><td class="num">14,782</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Tier 2 credit already taken</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Fire protection / sprinkler</td><td class="ref">20</td><td class="num">7,168</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Code</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Plumbing</td><td class="ref">21</td><td class="num">25,453</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>HVAC</td><td class="ref">22</td><td class="num">13,738</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Electrical incl. fire alarm</td><td class="ref">23</td><td class="num">33,174</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Fixture install labour is inside this</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>General requirements</td><td class="ref">24</td><td class="num">8,831</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Permit by owner</td></tr>
+
+      <tr class="grp"><td></td><td colspan="6">Millwork package — Clockwork as Nova sub, contracted</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Banquette top cap + panel wrap / seating base</td><td class="ref">32</td><td class="num">5,120</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Primary 1F seating</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Banquette rear cabinets</td><td class="ref">33</td><td class="num">5,525</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Banquette drink bar</td><td class="ref">34</td><td class="num">800</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Banquette east — base + upper shelving</td><td class="ref">35</td><td class="num">7,975</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">$3K credit already inside this number</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Wood pantry</td><td class="ref">36</td><td class="num">4,875</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Back bar glass cabinet</td><td class="ref">37</td><td class="num">3,750</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>T-shirt display</td><td class="ref">38</td><td class="num">3,300</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Merch revenue fixture</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Brand / merch wall</td><td class="ref">39</td><td class="num">4,250</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Bussing station</td><td class="ref">40</td><td class="num">3,250</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Labour efficiency every shift</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Register paneling</td><td class="ref">41</td><td class="num">3,400</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Bar tops</td><td class="ref">42</td><td class="num">750</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Bar top legs + bars</td><td class="ref">43</td><td class="num">2,005</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">$1,405 deducted below, install remains</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Millwork moulding</td><td class="ref">44</td><td class="num">5,600</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Doors / framing</td><td class="ref">45</td><td class="num">5,500</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+
+      <tr class="grp"><td></td><td colspan="6">Change orders</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Back bar quartz countertop</td><td class="ref">49</td><td class="num">4,347</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Tier 2 backsplash. Working surface behind the bar.</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Backlighting — back bar + merch wall</td><td class="ref">48</td><td class="num">4,200</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">The lit-bar look. Hard to add once the millwork closes up.</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Soffit framing</td><td class="ref">51</td><td class="num">4,200</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Likely already built — confirm status</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>6× 240V dedicated circuits</td><td class="ref">55</td><td class="num">3,954</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Equipment requires dedicated power. In-wall.</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>2 supply registers + duct extension</td><td class="ref">54</td><td class="num">2,628</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Comfort and health department</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Sneeze guard glass</td><td class="ref">59</td><td class="num">2,563</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Health department, food display</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Ogee edging on countertops</td><td class="ref">58</td><td class="num">2,400</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Bussing station countertop + plumbing</td><td class="ref">50</td><td class="num">2,174</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>LED lighting — corner banquette, bar face, windows</td><td class="ref">57</td><td class="num">1,000</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Low cost, high visual impact</td></tr>
+
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td><b>Wood base in lieu of vinyl base</b></td><td class="ref">56</td><td class="num">3,510</td><td><span class="d d-cut">Declined</span></td><td class="num pos">3,510</td><td class="why">We declined the identical item upstairs at row 131 with the note "please paint vinyl same colour as wall, not wood." The logic doesn't change one floor down.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td><b>Relock unit next door + new keys</b></td><td class="ref">60</td><td class="num">965</td><td><span class="d d-cut">Declined</span></td><td class="num pos">715</td><td class="why">A locksmith direct runs about $250. No reason for it to sit inside a GC contract. Net of the $250 we still spend.</td></tr>
+
+      <tr class="grp"><td></td><td colspan="6">Credits and deducts — already agreed, shown for reconciliation</td></tr>
+      <tr><td></td><td>Millwork credit, hardscape, flooring, tile, fireplace insert, Eliason door, bath accessories, plumbing, sinks, faucets, hardware, permit, bar top legs</td><td class="ref">27–74</td><td class="num neg">(79,462)</td><td class="muted">—</td><td class="num muted">—</td><td class="why">Settled with Nova. Not up for review.</td></tr>
+
+      <tr class="subtotal"><td></td><td>1st floor — current scope</td><td></td><td class="num">270,519</td><td></td><td class="num pos">4,225</td><td></td></tr>
+      <tr class="grand"><td></td><td>1st floor — after declines</td><td></td><td class="num">266,294</td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Part 2</p>
+  <h2 class="sec">2nd Floor — $123,452</h2>
+  <p class="lede">Four proposed declines plus one credit to claim. This floor pays for itself — scope is $123,452 against $125,000 of upstairs TI — so cutting it wholesale saves nothing and costs the $30,000 events line.</p>
+
+  <div class="scroll">
+  <table>
+    <thead><tr><th class="tick"></th><th>Item</th><th class="ref">Row</th><th class="num">Amount</th><th>Decision</th><th class="num">Saves</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td></td><td colspan="6">Base bid trades — contracted</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Electrical incl. fire alarm</td><td class="ref">92</td><td class="num">21,244</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Fixture install labour is inside this</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>HVAC</td><td class="ref">91</td><td class="num">12,721</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Drywall</td><td class="ref">86</td><td class="num">10,639</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Painting</td><td class="ref">88</td><td class="num">8,995</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Plumbing — two bathrooms</td><td class="ref">90</td><td class="num">6,400</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td><b>Polished concrete flooring — clean &amp; seal</b></td><td class="ref">87</td><td class="num">5,216</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">This already delivers a finished, sealed floor. Note it against row 125 below.</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>General requirements</td><td class="ref">93</td><td class="num">4,154</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Metal framing</td><td class="ref">85</td><td class="num">3,609</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Doors &amp; frames</td><td class="ref">84</td><td class="num">2,950</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Fire protection / sprinkler</td><td class="ref">89</td><td class="num">2,500</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Code</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Millwork — moulding</td><td class="ref">83</td><td class="num">2,141</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+
+      <tr class="grp"><td></td><td colspan="6">Large conference room — 33' × 14'</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Framing and drywall</td><td class="ref">96</td><td class="num">7,050</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Millwork back bar</td><td class="ref">99</td><td class="num">3,500</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Doors</td><td class="ref">98</td><td class="num">2,250</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Back bar — countertop</td><td class="ref">103</td><td class="num">1,600</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Scope stays — see the credit claim below</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Back bar — plumbing</td><td class="ref">100</td><td class="num">1,500</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Back bar — sink</td><td class="ref">101</td><td class="num">1,500</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Back bar — electrical</td><td class="ref">102</td><td class="num">750</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td><b>Add glass in wall</b></td><td class="ref">97</td><td class="num">3,200</td><td><span class="d d-cut">Declined</span></td><td class="num pos">3,200</td><td class="why">Still carries our own note on the sheet: "please show us what this looks like." An unresolved aesthetic decision that has been sitting priced-in. A solid wall books the same events.</td></tr>
+
+      <tr class="grp"><td></td><td colspan="6">Small conference room and additional 2F scope</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Small conference room — framing &amp; drywall</td><td class="ref">106</td><td class="num">2,250</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Floor receptacles</td><td class="ref">113</td><td class="num">3,850</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Power in the floor of an event space. Impossible to add later.</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Corner shelving millwork</td><td class="ref">114</td><td class="num">3,300</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">The 5 Edie sconces in part 3 are the picture lights for this wall</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Wood bar tops along wall</td><td class="ref">115</td><td class="num">2,755</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Framing and drywall — additional</td><td class="ref">111</td><td class="num">1,946</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why"></td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Lighting</td><td class="ref">112</td><td class="num">5,850</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Fully deducted below — we self-supply the fixtures, Nova hangs them</td></tr>
+
+      <tr class="grp"><td></td><td colspan="6">Change orders</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Fire sprinkler — added walls / separate rooms</td><td class="ref">121</td><td class="num">4,652</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Code consequence of building the conference rooms</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Paint concrete stairs</td><td class="ref">120</td><td class="num">2,457</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Raw concrete on the path event customers walk. Wasn't in the base bid. Roughly triples once the building is furnished.</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Painting — separate mobilisation</td><td class="ref">126</td><td class="num">540</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Cheap now, a full mobilisation charge later</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Remove handrail section</td><td class="ref">128</td><td class="num">521</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Almost certainly already executed — confirm</td></tr>
+
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td><b>Paint concrete floors</b></td><td class="ref">125</td><td class="num">3,940</td><td><span class="d d-cut">Declined</span></td><td class="num pos">3,940</td><td class="why">Row 87 already buys polished concrete, clean and seal, at $5,216. Nova's own note says "original price was for clean and seal only." We would be paying to paint a floor that is already finished.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td><b>Paint handrails, 1st to 2nd floor</b></td><td class="ref">129</td><td class="num">1,085</td><td><span class="d d-cut">Declined</span></td><td class="num pos">1,085</td><td class="why">A can of paint and an afternoon. Currently sits APPROVED with the PROVIS cell blank.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td><b>Additional picture frame moulding</b></td><td class="ref">130</td><td class="num">990</td><td><span class="d d-cut">Declined</span></td><td class="num pos">990</td><td class="why">Decorative trim on top of the moulding already bought at row 83.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td><b>Back bar countertop — credit to claim</b></td><td class="ref">103</td><td class="num muted">—</td><td><span class="d d-cut">Claim</span></td><td class="num pos">1,600</td><td class="why">Present in the negotiation worksheet, absent from the current sheet. A dropped credit, not a scope change — the countertop still gets built.</td></tr>
+
+      <tr class="grp"><td></td><td colspan="6">Credits and deducts — already agreed, shown for reconciliation</td></tr>
+      <tr><td></td><td>Specialty lighting, pre-fab cabinets, E wall millwork, Murphy door, tile wall, bar top legs, sinks, faucets, hardware, ACT ceiling</td><td class="ref">137–146</td><td class="num neg">(26,663)</td><td class="muted">—</td><td class="num muted">—</td><td class="why">Settled with Nova. Not up for review.</td></tr>
+
+      <tr class="subtotal"><td></td><td>2nd floor — current scope</td><td></td><td class="num">123,452</td><td></td><td class="num pos">10,815</td><td></td></tr>
+      <tr class="grand"><td></td><td>2nd floor — after declines</td><td></td><td class="num">112,637</td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note">
+    <p><b>Three of these rows currently read APPROVED with the PROVIS cell left blank</b> — the stair paint at row 120, the floor paint at row 125 and the handrail paint at row 129, together $7,482. That money is invisible in the sheet total right now. Two of the three become declines here, so filling the column and taking the decision happen in the same pass.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Part 3</p>
+  <h2 class="sec">FF&amp;E and lighting — $25,099</h2>
+  <p class="lede">Twelve lines are already ordered or dropped off and can't be recovered. Of the nineteen still open, two are downgrades and ten are deferrals to month three.</p>
+
+  <div class="scroll">
+  <table>
+    <thead><tr><th class="tick"></th><th>Item</th><th class="num">Qty</th><th class="num">Amount</th><th>Decision</th><th class="num">Saves</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td></td><td colspan="6">Already ordered or dropped off — not recoverable</td></tr>
+      <tr><td></td><td>Banquette cushions — labour + foam</td><td class="num">1</td><td class="num">3,550</td><td><span class="d d-keep">Committed</span></td><td class="num muted">—</td><td class="why"><span class="neg">Dropped 4 Aug · fabric lost by FedEx</span></td></tr>
+      <tr><td></td><td>Wallchiere sconces + Venie pendant</td><td class="num">14</td><td class="num">1,727</td><td><span class="d d-keep">Committed</span></td><td class="num muted">—</td><td class="why">Wayfair 2840420740 · $1,383 list + tax and freight</td></tr>
+      <tr><td></td><td>Colestin dining tables</td><td class="num">2</td><td class="num">1,376</td><td><span class="d d-keep">Committed</span></td><td class="num muted">—</td><td class="why">Ordered 3 Aug · ship 13–19 Aug</td></tr>
+      <tr><td></td><td>Patisserie glass serving stands</td><td class="num">2</td><td class="num">682</td><td><span class="d d-keep">Committed</span></td><td class="num muted">—</td><td class="why">Ballard 719773254 · $420 list + tax and freight</td></tr>
+      <tr><td></td><td>Alastair 3-light flush mounts</td><td class="num">4</td><td class="num">612</td><td><span class="d d-keep">Committed</span></td><td class="num muted">—</td><td class="why">Wayfair 8046406291</td></tr>
+      <tr><td></td><td>Twilley club chairs — upholstery</td><td class="num">1</td><td class="num">520</td><td><span class="d d-keep">Committed</span></td><td class="num muted">—</td><td class="why">Dropped 4 Aug</td></tr>
+      <tr><td></td><td>Bathroom faucets</td><td class="num">4</td><td class="num">251</td><td><span class="d d-keep">Committed</span></td><td class="num muted">—</td><td class="why">Wayfair 2840660700</td></tr>
+      <tr><td></td><td>Stainless back-bar sink</td><td class="num">1</td><td class="num">184</td><td><span class="d d-keep">Committed</span></td><td class="num muted">—</td><td class="why">Wayfair 2842039600</td></tr>
+      <tr><td></td><td>Cabinet knobs</td><td class="num">48</td><td class="num">170</td><td><span class="d d-keep">Committed</span></td><td class="num muted">—</td><td class="why">Amazon 112-6673067</td></tr>
+      <tr><td></td><td>Lever handles — privacy</td><td class="num">4</td><td class="num">144</td><td><span class="d d-keep">Committed</span></td><td class="num muted">—</td><td class="why">Wayfair 2840608150</td></tr>
+      <tr><td></td><td>Touchless back-bar faucet</td><td class="num">1</td><td class="num">97</td><td><span class="d d-keep">Committed</span></td><td class="num muted">—</td><td class="why">Wayfair 2842039600</td></tr>
+      <tr><td></td><td>Lever handles — passage</td><td class="num">3</td><td class="num">90</td><td><span class="d d-keep">Committed</span></td><td class="num muted">—</td><td class="why">Wayfair 2842968170</td></tr>
+
+      <tr class="grp"><td></td><td colspan="6">Still open — approved to buy</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Krosswood french doors 64×80</td><td class="num">1</td><td class="num">1,608</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Already the cut — Nova wanted $2,743 for the same opening</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Chesterfield sofas — faux leather</td><td class="num">2</td><td class="num">1,200</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">The 2F lounge <em>is</em> the event product. $30,000 of Mid-case revenue sits on it.</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Edie sconces — corner bookcase wall</td><td class="num">5</td><td class="num">925</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Picture lights for the corner shelving at row 114. Cutting them leaves a built wall unlit.</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Edie island chandelier — 2F kitchen</td><td class="num">1</td><td class="num">695</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Hardwired position, and Nova's electrician hangs it. Buy while they're on site.</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Outdoor gold folding patio tables</td><td class="num">6</td><td class="num">522</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Incremental covers from day one, into patio weather</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Marloe shelf — POS wall</td><td class="num">1</td><td class="num">419</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Retail bag display at the register. Highest revenue per dollar on either sheet.</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Undermount sinks — bathrooms</td><td class="num">4</td><td class="num">320</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Code. Not a decision.</td></tr>
+      <tr><td class="tick"><span class="box"></span></td><td>Tax &amp; freight on the approved open lines @ 15%</td><td class="num">—</td><td class="num">1,332</td><td><span class="d d-keep">Approved</span></td><td class="num muted">—</td><td class="why">Provision — currently on no sheet</td></tr>
+
+      <tr class="grp"><td></td><td colspan="6">Still open — proposed declines</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td><b>Chambers leather chandeliers</b> — conference room</td><td class="num">2</td><td class="num">2,198</td><td><span class="d d-cut">Downgrade</span></td><td class="num pos">1,198</td><td class="why">Statement lighting in a room that is rented, not browsed. A $1,000 alternative reads the same in a booking photo.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td><b>Cremone bolt oval knob</b> — Rejuvenation</td><td class="num">4</td><td class="num">996</td><td><span class="d d-cut">Downgrade</span></td><td class="num pos">696</td><td class="why">Functional equivalent around $300. Nobody photographs cabinet bolts.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td>Chesterfield chairs — faux brown</td><td class="num">2</td><td class="num">800</td><td><span class="d d-cut">Defer</span></td><td class="num pos">800</td><td class="why">We already own two. Two sofas carry the lounge on day one.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td>Tortoise rattan coffee tables</td><td class="num">2</td><td class="num">744</td><td><span class="d d-cut">Defer</span></td><td class="num pos">744</td><td class="why">Bolt-on. Zero rework penalty, same price in November.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td>Wool plaid throws</td><td class="num">6</td><td class="num">660</td><td><span class="d d-cut">Defer</span></td><td class="num pos">660</td><td class="why">Pure décor. Throws start earning their keep in November anyway.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td>Planters, plants, bookends, pots</td><td class="num">—</td><td class="num">620</td><td><span class="d d-cut">Defer</span></td><td class="num pos">620</td><td class="why">Unpriced on the sheet — no vendor, no quantity, no spec.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td>Sherazi rug — 1F fireplace</td><td class="num">1</td><td class="num">495</td><td><span class="d d-cut">Defer</span></td><td class="num pos">495</td><td class="why">First thing to buy back in month three.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td>Benton side tables — lounge</td><td class="num">4</td><td class="num">460</td><td><span class="d d-cut">Defer</span></td><td class="num pos">460</td><td class="why">Useful, not required, at day one.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td>Rug 5'×6' — 2F corner</td><td class="num">1</td><td class="num">388</td><td><span class="d d-cut">Defer</span></td><td class="num pos">388</td><td class="why">Secondary corner under chairs. Nobody notices its absence.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td>Console table — between 2F sofas</td><td class="num">1</td><td class="num">314</td><td><span class="d d-cut">Defer</span></td><td class="num pos">314</td><td class="why">Bolt-on.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td>Game / desk table — lounge</td><td class="num">1</td><td class="num">150</td><td><span class="d d-cut">Defer</span></td><td class="num pos">150</td><td class="why">Still unspecified — a marketplace find that will still be there.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td>Round metal claw table 31"</td><td class="num">1</td><td class="num">135</td><td><span class="d d-cut">Defer</span></td><td class="num pos">135</td><td class="why">Accent only.</td></tr>
+      <tr class="cutrow"><td class="tick"><span class="box"></span></td><td>Tax &amp; freight avoided on the deferred lines</td><td class="num">—</td><td class="num">715</td><td><span class="d d-cut">Saves</span></td><td class="num pos">715</td><td class="why">At 15%</td></tr>
+
+      <tr class="subtotal"><td></td><td>FF&amp;E and lighting — current scope</td><td></td><td class="num">25,099</td><td></td><td class="num pos">7,375</td><td></td></tr>
+      <tr class="grand"><td></td><td>FF&amp;E and lighting — after declines</td><td></td><td class="num">17,724</td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note">
+    <p><b>The order sheets are priced before tax and freight.</b> Where we have real invoices, the Ballard serving stands went from $420 to <b>$681.98 (+62%)</b> and the Wayfair sconce order from $1,383 to <b>$1,726.59 (+25%)</b>. NKC sales tax alone is about 9% before freight. A 15% provision is carried above and it's probably light — every future order sheet needs that column.</p>
+  </div>
+
+  <div class="note">
+    <p><b>Act on the banquette fabric today, whatever the room decides.</b> $3,550 of cushion work is sitting at the upholsterer waiting on fabric FedEx has declared lost. That's the primary seating on the first floor, there is no opening day without it, and upholstery fabric runs four to six weeks. Re-order now and file the claim separately.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Total</p>
+  <h2 class="sec">Where it lands</h2>
+
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Summary</th><th class="num">Current scope</th><th class="num">Declines</th><th class="num">After cuts</th></tr></thead>
+    <tbody>
+      <tr><td>1st floor construction</td><td class="num">270,519</td><td class="num pos">4,225</td><td class="num">266,294</td></tr>
+      <tr><td>2nd floor construction</td><td class="num">123,452</td><td class="num pos">10,815</td><td class="num">112,637</td></tr>
+      <tr class="subtotal"><td>Construction</td><td class="num">393,971</td><td class="num pos">15,040</td><td class="num">378,931</td></tr>
+      <tr><td>FF&amp;E and lighting</td><td class="num">25,099</td><td class="num pos">7,375</td><td class="num">17,724</td></tr>
+      <tr class="grand"><td>Total scope</td><td class="num">419,070</td><td class="num pos">22,415</td><td class="num">396,655</td></tr>
+    </tbody>
+    <caption>Twelve proposed declines across 5.3% of scope.</caption>
+  </table>
+  </div>
+
+  <div class="scroll">
+  <table>
+    <thead><tr><th>What it means for cash</th><th class="num">Amount</th></tr></thead>
+    <tbody>
+      <tr><td>Construction after declines</td><td class="num">378,931</td></tr>
+      <tr><td>Less TI tranche 1 + tranche 2</td><td class="num neg">(274,500)</td></tr>
+      <tr><td>Less draw already contributed</td><td class="num neg">(91,500)</td></tr>
+      <tr class="subtotal"><td>Construction still on us</td><td class="num">12,931</td></tr>
+      <tr><td>FF&amp;E and lighting</td><td class="num">17,724</td></tr>
+      <tr><td>AV / tech install</td><td class="num">8,000</td></tr>
+      <tr><td>Signage</td><td class="num">4,000</td></tr>
+      <tr><td>Miscellaneous</td><td class="num">5,000</td></tr>
+      <tr class="subtotal"><td>Total cash out from here</td><td class="num">47,655</td></tr>
+      <tr><td>Cash available — $110,000 on hand + $7,000 pre-opening sales</td><td class="num">117,000</td></tr>
+      <tr class="grand"><td>Cash at opening</td><td class="num">69,345</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Against the model</th><th class="num">Approve everything</th><th class="num">Approve the declines</th></tr></thead>
+    <tbody>
+      <tr><td>Cash at opening</td><td class="num">46,930</td><td class="num pos">69,345</td></tr>
+      <tr><td>Low case — trough, month 6</td><td class="num">10,262</td><td class="num pos">32,677</td></tr>
+      <tr><td>Low case — months of cover at the trough</td><td class="num neg">0.4</td><td class="num pos">1.3</td></tr>
+      <tr><td>Low case — Year 1 ending cash</td><td class="num">40,446</td><td class="num pos">62,861</td></tr>
+      <tr><td>Mid case — Year 1 ending cash</td><td class="num">59,530</td><td class="num pos">81,945</td></tr>
+    </tbody>
+    <caption>Low is 125 customers a day. Months of cover measured against the $25,630 Mid monthly burn. Debt service at $3,500/mo — SBA and construction notes only.</caption>
+  </table>
+  </div>
+
+  <div class="fix">
+    <p class="eyebrow">One call still to make — worth $17,082</p>
+    <p>Separate from every line above, our own <em>Keep vs Cut</em> analysis already named and priced a <strong>trade buyout ask to Nova</strong>. It's a normal conversation at this stage of a job, costs nothing to make, and is worth more than all twelve declines combined. If it lands we open at <strong>$86,427</strong> and 1.9 months of cover. Put the six construction declines in the same call.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Coming out of the room</p>
+  <h2 class="sec">If we commit, this is the order</h2>
+  <ol>
+    <li><b>Call Nova.</b> The six construction declines, the $1,600 back bar countertop credit, the trade buyout ask, and confirm no cancellation charge on change orders they haven't started.</li>
+    <li><b>Re-order the banquette fabric</b> and file the FedEx claim separately.</li>
+    <li><b>Finish the PROVIS column.</b> Rows 120, 125 and 129 read APPROVED with the cell blank — $7,482 invisible in the total. Extend F78 to F5:F77 and F148 to F83:F147 so the next change order can't silently drop out.</li>
+    <li><b>Place the approved FF&amp;E orders</b> with a 15% tax-and-freight line on every one.</li>
+    <li><b>Put the $4,766 of deferred FF&amp;E on a dated month-three list.</b> Deferrals nobody writes down become cancellations.</li>
+  </ol>
+</section>
+
+<footer>
+  Sources: Provis Coffee - Pricing w_ Change Orders (5).xlsx · TO BE ORDERED (1).pdf · 2nd FL lighting To be Ordered (1).pdf · Provis_Coffee_Keep_vs_Cut.xlsx · Provis Coffee — Pro Forma v5.0 (2026-08-07).xlsx<br>
+  Row references are to Pricing w/ Change Orders (5); amounts are the PROVIS column. Pro forma figures recalculated from live formulas; the Low monthly build is derived and reconciles to the model's Low annual operating cash flow exactly. The 15% tax-and-freight provision and the two downgrade prices are estimates.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var r=document.documentElement, K='provis-theme', b=document.getElementById('tt');
+  function eff(){ var a=r.getAttribute('data-theme');
+    return a || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+  function paint(){ b.innerHTML = eff()==='dark' ? '&#9788;' : '&#9789;'; }
+  var s=null; try{ s=localStorage.getItem(K); }catch(e){}
+  if(s){ r.setAttribute('data-theme',s); }
+  paint();
+  b.addEventListener('click',function(){
+    var n = eff()==='dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme',n);
+    try{ localStorage.setItem(K,n); }catch(e){}
+    paint();
+  });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',paint);
+})();
+</script>
+</body>
+</html>
